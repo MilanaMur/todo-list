@@ -1,0 +1,37 @@
+@use "./variables" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, $lavender-100 0%, $white 100%);
+  color: $gray-700;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+  padding-bottom: 40px;
+}
+
+.container {
+  width: calc(100% - 32px);
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+body,
+.todo,
+.btn,
+.todo__input {
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

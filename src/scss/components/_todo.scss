@@ -1,0 +1,150 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.main {
+  padding-top: 12px;
+
+  .todo {
+    background: $white;
+    border-radius: $radius-lg;
+    box-shadow: 0 6px 16px rgba($lavender-800, 0.08);
+    padding: 16px;
+    overflow: hidden;
+
+    &__add {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    &__input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid $gray-200;
+      font-size: 15px;
+      color: $gray-700;
+      background: $gray-100;
+      @include focus-visible;
+
+      &:focus {
+        border-color: $lavender-400;
+        box-shadow: 0 0 0 3px rgba($lavender-400, 0.2);
+      }
+    }
+
+    &__add-btn {
+      white-space: nowrap;
+    }
+
+    &__panel {
+      min-height: 80px;
+    }
+
+    &__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    &__item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+      border-radius: 10px;
+      transition: background 0.15s ease, transform 0.08s ease;
+      background: linear-gradient(
+        90deg,
+        rgba($lavender-50, 0.9),
+        rgba($white, 0.8)
+      );
+      border: 1px solid rgba($lavender-400, 0.15);
+
+      &[data-completed="true"] {
+        opacity: 0.6;
+        .todo__text {
+          text-decoration: line-through;
+        }
+      }
+
+      &:hover {
+        background: rgba($lavender-100, 0.8);
+        transform: translateY(-2px);
+      }
+    }
+
+    &__checkbox {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .todo__check-input {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid rgba($lavender-500, 0.25);
+      background: transparent;
+      position: relative;
+      cursor: pointer;
+      @include focus-visible;
+
+      &:checked {
+        background: linear-gradient(180deg, $lavender-500, $lavender-600);
+        border-color: $lavender-600;
+      }
+    }
+
+    .todo__text {
+      font-size: 15px;
+      color: $gray-700;
+      word-break: break-word;
+    }
+
+    &__actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    &__empty {
+      text-align: center;
+      padding: 20px;
+      color: $gray-500;
+      font-size: 15px;
+    }
+
+    &__footer {
+      margin-top: 12px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &__count {
+      color: $gray-500;
+      font-size: 14px;
+    }
+
+    &__filters {
+      display: flex;
+      gap: 8px;
+    }
+
+    .filter[aria-selected="true"] {
+      background: $lavender-200;
+      border: 1px solid rgba($lavender-500, 0.2);
+      color: $lavender-700;
+    }
+
+    &__controls {
+      margin-left: auto;
+    }
+  }
+}

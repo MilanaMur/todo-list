@@ -1,0 +1,78 @@
+@use "../base/variables" as *;
+
+.app__header {
+  padding-top: 28px;
+
+  .header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__title {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+      color: $lavender-800;
+    }
+
+    &__subtitle {
+      margin: 0;
+      font-size: 13px;
+      color: $lavender-600;
+    }
+
+    &__controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    &__theme-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      width: 2.4rem;
+      height: 2.4rem;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      color: #6c4ab6;
+
+      &:hover {
+        transform: rotate(20deg) scale(1.1);
+      }
+
+      .icon {
+        position: absolute;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .sun {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+
+      .moon {
+        opacity: 0;
+        transform: rotate(-90deg);
+      }
+
+      &[aria-pressed="true"] {
+        .sun {
+          opacity: 0;
+          transform: rotate(90deg);
+        }
+
+        .moon {
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+}

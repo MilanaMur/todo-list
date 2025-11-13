@@ -1,0 +1,7 @@
+@use "../base/variables" as *;
+
+.app__footer {
+  color: $gray-500;
+  text-align: center;
+  font-size: 13px;
+}

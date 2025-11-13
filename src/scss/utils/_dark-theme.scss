@@ -1,0 +1,26 @@
+[data-theme="dark"] {
+  body {
+    background: linear-gradient(180deg, #2a2443, #1d1835);
+    color: #e6defb;
+  }
+
+  .todo {
+    background: #2f2751;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+
+    &__input {
+      background: #3a3161;
+      color: #f0eaff;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .btn--primary {
+    background: linear-gradient(180deg, #a394e5, #8c7adb);
+  }
+
+  .filter[aria-selected="true"] {
+    background: rgba(163, 148, 229, 0.18);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+}
