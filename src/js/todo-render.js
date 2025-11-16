@@ -12,7 +12,6 @@ export function render() {
     return true;
   });
 
-  // Отрисовка задач
   list.innerHTML = "";
   filtered.forEach((todo) => {
     const li = document.createElement("li");
@@ -27,14 +26,11 @@ export function render() {
     list.appendChild(li);
   });
 
-  // Пустой список
   empty.hidden = todos.length > 0;
 
-  // Счётчик задач
   const activeCount = todos.filter((todo) => !todo.completed).length;
   count.textContent = `${activeCount} ${getTaskWord(activeCount)}`;
 
-  // Обновление фильтров
   filters.forEach((btn) => {
     btn.setAttribute("aria-selected", btn.dataset.filter === currentFilter);
   });

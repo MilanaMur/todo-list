@@ -3,7 +3,6 @@ import { state } from "./state.js";
 import { render } from "./todo-render.js";
 
 export function initTodoHandlers() {
-  // Добавление задачи
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const text = input.value.trim();
@@ -14,7 +13,6 @@ export function initTodoHandlers() {
     render();
   });
 
-  // Клики по списку задач
   list.addEventListener("click", (e) => {
     const item = e.target.closest(".todo__item");
     if (!item) return;
@@ -31,7 +29,6 @@ export function initTodoHandlers() {
     }
   });
 
-  // Фильтры
   filters.forEach((btn) => {
     btn.addEventListener("click", () => {
       state.setCurrentFilter(btn.dataset.filter);
@@ -39,7 +36,6 @@ export function initTodoHandlers() {
     });
   });
 
-  // Очистка выполненных задач
   clearBtn.addEventListener("click", () => {
     state.clearCompleted();
     render();

@@ -47,16 +47,6 @@ export const state = {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
   },
 
-  // updateTodoText(id, newText) {
-  //   todos = todos.map((todo) => {
-  //     if (todo.id === id) {
-  //       todo.text = newText;
-  //     }
-  //     return todo;
-  //   });
-  //   localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
-  // },
-
   clearCompleted() {
     todos = todos.filter((todo) => !todo.completed);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
