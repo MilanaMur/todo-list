@@ -1,26 +1,64 @@
+@use "../base/variables" as *;
+
 [data-theme="dark"] {
   body {
     background: linear-gradient(180deg, #2a2443, #1d1835);
     color: #e6defb;
   }
 
-  .todo {
-    background: #2f2751;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  .main {
+    .todo {
+      background: #2f2751;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 
-    &__input {
-      background: #3a3161;
-      color: #f0eaff;
-      border-color: rgba(255, 255, 255, 0.1);
+      &__input {
+        color: $lavender-600;
+        background: #3a3161;
+        border-color: rgba(255, 255, 255, 0.1);
+        &::placeholder {
+          color: $gray-500;
+        }
+      }
+
+      &__item {
+        background: #3a3161;
+        border-color: rgba(255, 255, 255, 0.1);
+        &:hover {
+          background: rgba(58, 49, 97, 0.7);
+          border-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      &__text {
+        color: $lavender-600;
+      }
+
+      .btn {
+        &--primary {
+          color: $gray-500;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #3a3161;
+          &:hover {
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+          }
+        }
+
+        &--ghost {
+          color: $gray-500;
+          &:hover {
+            background: rgba(163, 148, 229, 0.18);
+            border-color: rgba(255, 255, 255, 0.15);
+          }
+        }
+      }
+
+      .filter {
+        color: $gray-500;
+        &[aria-selected="true"] {
+          background: rgba(163, 148, 229, 0.18);
+          border-color: rgba(255, 255, 255, 0.15);
+        }
+      }
     }
-  }
-
-  .btn--primary {
-    background: linear-gradient(180deg, #a394e5, #8c7adb);
-  }
-
-  .filter[aria-selected="true"] {
-    background: rgba(163, 148, 229, 0.18);
-    border-color: rgba(255, 255, 255, 0.15);
   }
 }
