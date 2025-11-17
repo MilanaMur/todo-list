@@ -18,6 +18,7 @@ export function render() {
     li.className = "todo__item";
     li.dataset.id = todo.id;
     li.dataset.completed = todo.completed;
+    li.draggable = true;
     li.innerHTML = ` <label class="todo__checkbox"> <input type="checkbox" class="todo__check-input" ${
       todo.completed ? "checked" : ""
     }> </label> <span class="todo__text">${

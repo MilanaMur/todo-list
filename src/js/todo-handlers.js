@@ -1,8 +1,11 @@
 import { form, input, list, filters, clearBtn } from "./constants.js";
 import { state } from "./state.js";
 import { render } from "./todo-render.js";
+import { initDragAndDrop } from "./drag-drop.js";
 
 export function initTodoHandlers() {
+  initDragAndDrop();
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const text = input.value.trim();

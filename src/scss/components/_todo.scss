@@ -68,9 +68,20 @@
           text-decoration: line-through;
         }
       }
+      &.dragging {
+        opacity: 0.5;
+        background: #f0f0f0;
+      }
       &:hover {
+        cursor: grab;
         background: rgba($lavender-100, 0.8);
         transform: translateY(-2px);
+      }
+      &:active {
+        cursor: grabbing;
+      }
+      &[draggable="true"] {
+        transition: all 0.2s ease;
       }
     }
 

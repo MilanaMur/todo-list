@@ -51,4 +51,17 @@ export const state = {
     todos = todos.filter((todo) => !todo.completed);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
   },
+
+  reorderTodos(newOrder) {
+    const todoMap = new Map(todos.map((todo) => [todo.id, todo]));
+
+    const reorderedTodos = newOrder
+      .map((id) => todoMap.get(id))
+      .filter(Boolean);
+
+    const remainingTodos = todos.filter((todo) => !newOrder.includes(todo.id));
+
+    todos = [...reorderedTodos, ...remainingTodos];
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+  },
 };
