@@ -11,6 +11,11 @@
       background: #2f2751;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 
+      &__check-input:checked {
+        background: linear-gradient(180deg, #3b335f, #1d1935);
+        border-color: #1d1935;
+      }
+
       &__input {
         color: $lavender-600;
         background: #3a3161;
